@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "description": "When your api object takes a few ticks to initialize, use this package to buffer its usage then play it on the real one!",
   "main": "index.js",
+  "homepage": "https://github.com/iBaryo/api-calls-buffer",
   "scripts": {
     "build": "tsc index.ts --target es2016 --module commonjs --sourcemap --declaration",
     "prepublish": "npm run build",
