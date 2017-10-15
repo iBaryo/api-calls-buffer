@@ -1,7 +1,7 @@
 {
-  "name": "object-calls-buffer",
+  "name": "api-calls-buffer",
   "version": "1.0.0",
-  "description": "Get a temp proxy object to cache calls",
+  "description": "When your api object takes a few ticks to initialize, use this package to buffer its usage then play it on the real one!",
   "main": "index.js",
   "scripts": {
     "build": "tsc index.ts --target es2016 --module commonjs --sourcemap --declaration",
