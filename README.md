@@ -8,7 +8,7 @@ npm i api-calls-buffer --save
 
 ## Usage
 ```typescript
-import {createBuffer} from "./index";
+import {createBuffer} from "api-calls-buffer";
 
 // Lets say I want to expose an api object
 //   but it takes some ticks to initialize
