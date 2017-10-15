@@ -1,6 +1,8 @@
 # Api Calls Buffer
 When your api object takes a few ticks to initialize, use this package to buffer its usage then play it on the real one!
 
+* Supported in ES2015 and above.
+
 ## Installation
 ```
 npm i api-calls-buffer --save
