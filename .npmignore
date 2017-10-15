@@ -1,0 +1,7 @@
+.idea/
+node_modules/
+spec/
+**/*.ts
+**/*.js.map
+example.*
+tsconfig.json

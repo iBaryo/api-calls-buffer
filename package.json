@@ -1,0 +1,19 @@
+{
+  "name": "object-calls-buffer",
+  "version": "1.0.0",
+  "description": "Get a temp proxy object to cache calls",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc index.ts --target es2016 --module commonjs --sourcemap --declaration",
+    "prepublish": "npm run build",
+    "start": "ts-node example.ts",
+    "test": "npm run build && jasmine-ts \"spec/*spec.ts\""
+  },
+  "author": "Or Bar Yosef",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jasmine": "^2.6.0",
+    "jasmine-ts": "^0.2.1",
+    "typescript": "^2.5.3"
+  }
+}
