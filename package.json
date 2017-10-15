@@ -1,6 +1,6 @@
 {
   "name": "api-calls-buffer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "When your api object takes a few ticks to initialize, use this package to buffer its usage then play it on the real one!",
   "main": "index.js",
   "scripts": {
