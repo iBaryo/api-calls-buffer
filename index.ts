@@ -20,7 +20,7 @@ export function createBuffer<T>(rootName = 'root') {
 
     return {
         calls,
-        root: new Proxy({__getKey: () => 'root'}, dynHandler) as T,
+        root: new Proxy({__getKey: () => rootName}, dynHandler) as T,
         invokeFor: (obj: Object) => {
             for (const k of calls.keys()) {
                 const lastProperty = k.lastIndexOf('.');
