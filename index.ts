@@ -21,15 +21,32 @@ export function createBuffer<T>(rootName = 'root') {
     return {
         calls,
         root: new Proxy({__getKey: () => rootName}, dynHandler) as T,
-        invokeFor: (obj: Object) => {
+        invokeFor: async (obj: Object, options : InvocationOptions = {}) => {
             for (const k of calls.keys()) {
                 const lastProperty = k.lastIndexOf('.');
                 const ctxStr = k.substr(0, lastProperty);
                 const ctxGetter = new Function(rootName, `return ${ctxStr}`);
                 const ctx = ctxGetter(obj);
                 const fnName = k.substr(lastProperty + 1);
-                ctx[fnName].apply(ctx, calls.get(k));
+
+                try {
+                    const res = ctx[fnName].apply(ctx, calls.get(k));
+                    if (options.sync && res instanceof Promise) await res;
+                }
+                catch (e) {
+                    if (!options.errorHandler) {
+                        throw e;
+                    }
+                    else {
+                        options.errorHandler(k, calls.get(k), e);
+                    }
+                }
             }
         }
     };
+}
+
+export interface InvocationOptions {
+    sync? : boolean;
+    errorHandler? : (callName : string, args : any[], e : any) => void;
 }
