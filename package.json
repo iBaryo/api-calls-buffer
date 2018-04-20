@@ -6,9 +6,13 @@
   "homepage": "https://github.com/iBaryo/api-calls-buffer",
   "scripts": {
     "build": "tsc index.ts --target es2016 --module commonjs --sourcemap --declaration",
-    "prepublish": "npm run build",
+    "prepublish": "npm test",
     "start": "ts-node example.ts",
     "test": "npm run build && jasmine-ts \"spec/*spec.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iBaryo/api-calls-buffer.git"
   },
   "author": "Or Bar Yosef",
   "license": "MIT",
